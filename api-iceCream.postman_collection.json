@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "b3511aad-e75e-4d1d-9a3d-03107a3f2dd8",
+		"name": "api-iceCream",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42372696"
+	},
+	"item": [
+		{
+			"name": "catalog",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/catalog",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"catalog"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Açaí",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"maça verde\",\r\n    \"price\": 12.90\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/catalog"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"manga\",\r\n    \"price\": 6.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/catalog/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/catalog/9"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"catalog_id\": 5,\r\n    \"quantity\": 1,\r\n    \"name_Orders\": \"vinicius\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Index",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/count/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"count",
+								"1"
+							],
+							"query": [
+								{
+									"key": "name_Orders",
+									"value": "vinicius",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Account_TOTAL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders/count?name_Orders=vinicius",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders",
+								"count"
+							],
+							"query": [
+								{
+									"key": "name_Orders",
+									"value": "vinicius"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/orders/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
